@@ -29,4 +29,5 @@ Route::delete('/tasks/{id}', [TaskController::class, 'deleteTask']);
 // Route::post('register', [UserController::class, 'register']);
 
 Route::get('/users', [UserController::class, 'getUsers']);
+Route::post('/users', [UserController::class, 'createUser']);
 

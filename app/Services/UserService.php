@@ -10,4 +10,14 @@ class UserService
     {
         return DB::select("SELECT * FROM users");
     }
+
+    public function createUser($name, $email, $password)
+    {
+        DB::insert("INSERT INTO users (name, email, password) VALUES (?, ?, ?)", [$name, $email, $password]);
+
+        return [
+            'name' => $name,
+            'email' => $email
+        ];
+    }
 }
